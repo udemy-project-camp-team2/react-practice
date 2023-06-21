@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+#back__image {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+button[name="change"] {
+  padding: 1rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: rgba(185, 95, 241, 1);
+  color: #fff;
+  border: none;
+  outline: none;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out, scale 0.2s ease-in;
+  cursor: pointer;
+}
+
+button[name="change"]:hover {
+  opacity: 1;
+}

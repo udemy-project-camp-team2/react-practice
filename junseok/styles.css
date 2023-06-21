@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#my__image {
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  display: block;
+  border-radius: 50%;
+}
+
+#my__info {
+  margin-top: 1rem;
+}
+
+#my__info dl {
+  margin: 0 auto;
+  width: 200px;
+}
+
+dt {
+  font-weight: bolder;
+}
+
+dd {
+  margin: 1rem 0;
+}
+
+ul {
+  padding-left: 2rem;
+}
+
+details {
+  padding-left: 1rem;
+}
