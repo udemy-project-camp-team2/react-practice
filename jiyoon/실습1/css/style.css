@@ -1,0 +1,139 @@
+a { text-decoration: none;}
+
+#container{
+  width:100%;
+  height:100vh; 
+  overflow: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+/* Header */
+header {
+  width: 100%;
+  position: fixed;
+}
+
+.menu {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.menu ul { 
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.menu ul li a {
+  font-size: 26px;
+  font-weight: bold;
+  color: #000;
+  font-family: 'Frank Ruhl Libre', serif;
+}
+
+/* article 공통 */
+article {
+    width:100%; 
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+}
+
+/* About */
+#about {
+  background-color: #F9F5E7;
+  text-align: center;
+}
+
+#about img {
+  width: 70%;
+  border: 5px solid #FF822D;
+  border-radius: 100%;
+  margin-bottom: 40px;
+}
+
+#about p {
+  font-size: 22px;
+  padding-top: 25px;
+  font-weight: bold;
+}
+
+/* Timeline */
+#timeline {
+  background-color: #e0d8cc;
+  background-size: cover;
+  background-attachment: fixed; 
+  background-position: center; 
+  text-align: center;
+}
+
+#timeline .inner {
+  width: 1700px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#timeline .inner div {
+  width: 30%;
+  padding-top: 50px;
+}
+
+#timeline .inner img {
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  transform: scale(0.9);
+  transition: all 0.2s;
+}
+
+#timeline .inner img:hover {
+  transform: scale(1);
+}
+
+#timeline .inner span {
+  font-weight: bold;
+  line-height: 30px;
+}
+
+/* Contact */
+#contact {
+  background-color: #F8EAD8;
+  text-align: center;
+}
+
+#contact img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  transform: scale(0.9);
+  transition: all 0.2s;
+}
+
+#contact img:hover {
+  transform: scale(1);
+}
+
+
+#contact a {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Frank Ruhl Libre', serif;
+  padding: 0 140px;
+  font-style: italic;
+  color:#000;
+}
+
+#contact a:hover {
+  color:#FF822D;
+}
+
+
+.menu_active {
+  color:#FF822D !important;
+  text-decoration: underline;
+}

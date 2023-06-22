@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>search</title>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+
+    function Calc() {
+
+      const [value, setValue] = React.useState('');
+
+      function cal(num) {
+        setValue(value + num);
+        console.log(num);
+      }
+
+      function answer() {
+        setValue(eval(value));
+      }
+
+      return (
+        <>
+          <form name="MyForm" id="calc">
+            <p><input type="text" id="win" value={value} /></p>
+            <p>
+              <input type="button" value="1" onClick={() => cal('1')} />
+              <input type="button" value="2" onClick={() => cal('2')} />
+              <input type="button" value="3" onClick={() => cal('3')} />
+              <input type="button" value="4" onClick={() => cal('4')} />
+              <input type="button" value="5" onClick={() => cal('5')} />
+            </p>
+            <p>
+              <input type="button" value="6" onClick={() => cal('6')} />
+              <input type="button" value="7" onClick={() => cal('7')} />
+              <input type="button" value="8" onClick={() => cal('8')} />
+              <input type="button" value="9" onClick={() => cal('9')} />
+              <input type="button" value="0" onClick={() => cal('0')} />
+            </p>
+            <p>
+              <input type="button" value="/" onClick={() => cal('/')} />
+              <input type="button" value="*" onClick={() => cal('*')} />
+              <input type="button" value="-" onClick={() => cal('-')} />
+              <input type="button" value="+" onClick={() => cal('+')} />
+              <input type="button" value="=" onClick={answer} />
+            </p>
+            <p>
+              <input type="reset" value="AC" />
+            </p>
+          </form>
+        </>
+      );
+    }
+
+    ReactDOM.render(<Calc />, root);
+  </script>
+</body>
+
+</html>

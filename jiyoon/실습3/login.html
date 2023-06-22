@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>search</title>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    function App() {
+      const [username, setUsername] = React.useState("");
+      const [password, setPassword] = React.useState("");
+
+      const handleUsernameChange = (e) => {
+        setUsername(e.target.value);
+      };
+
+      const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+      };
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log("Username:", username);
+        console.log("Password:", password);
+      };
+
+
+      return (
+        <form onSubmit={handleSubmit}>
+          <label>
+            Username:
+            <input
+              type="text"
+              value={username}
+              onChange={handleUsernameChange}
+            />
+          </label>
+          <br />
+          <label>
+            Password:
+            <input
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </label>
+          <br />
+          <button type="submit">Log In</button>
+        </form>
+      )
+    }
+
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
+</body>
+
+</html>
