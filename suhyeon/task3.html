@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Login (){
+            const [username,setUsername] = React.useState('');
+            const [userpassword,setUserpassword] = React.useState('');
+
+            const usernameChange = (event) => {
+                setUsername(event.target.value);
+            }
+            const userpasswordChange = (event) => {
+                setUserpassword(event.target.value);
+            }
+            const handleSubmit = (event) => {
+                event.preventDefault();
+                console.log('username',username);
+                console.log('password',userpassword);
+            }
+
+            return (
+                <div>
+                    <form  onSubmit={handleSubmit}>
+                        <p>
+                            <label for="name">이름</label>
+                            <span><input type="text" name="name" id="name" required="" onChange={usernameChange} value={username}/></span>
+                        </p>
+                        <p>
+                            <label for="password">비밀번호</label>
+                            <span><input type="password" name="password" id="password" required="" onChange={userpasswordChange} value={userpassword}/></span>
+                        </p>
+                        <p>
+                            <button type="submit">login</button>
+                        </p>
+                    </form>
+                </div>
+            )
+        }
+        ReactDOM.render(<Login />,root);
+    </script>
+</body>
+</html>

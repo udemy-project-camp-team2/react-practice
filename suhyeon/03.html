@@ -10,25 +10,23 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">
+
+    </div>
     <script type="text/babel">
-        const root = document.getElementById('root');
-
-        function userProfile (){
-                return (
-                    <div name = 'ㅎㅅㅎ' age={30} work='artist'>
-                        {name}, {age}
-                    </div>
-                )
+        function App () {
+            const [counter, setCounter] = React.useState(100);
+            const onClick = () => {
+                setCounter((counter) => counter +1);
             }
-
-        function App ({name, age, work}) {
             return (
-                    <userProfile name = 'ㅎㅅㅎ' age={30} work='artist'/>
-                )
+                <div>
+                    <h1>Total Clicks : {counter}</h1>
+                    <button onClick={onClick}> Click me </button>
+                </div>
+            )
         }
-        
-        ReactDOM.render(<App/>,root);
+        ReactDOM.render(<App />,root);
     </script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h2 id="container">0</h2>
+    <div>
+        <button id="minus">-1</button>
+        <button id="plus">+1</button>
+    </div>
+
+    <script type="text/babel">
+        const container = document.getElementById('container');
+        const plus = document.getElementById('plus');
+        const minus = document.getElementById('minus');
+
+        const CountUp = () => {
+            const current = parseInt(container.innerText);
+            container.innerText = current + 1;
+        }
+        const Countdown = () => {
+            const current = parseInt(container.innerText);
+            container.innerText = current - 1;
+        }
+        plus.addEventListener('click',CountUp);
+        minus.addEventListener('click',Countdown);
+    </script>
+</body>
+</html>

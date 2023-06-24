@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script type="text/babel">
+    const root = document.getElementById('root');
+
+    function Random(){
+        const [img,setImg] = React.useState('images/player1.jpeg'); 
+        const imgs = [
+            'images/player1.jpeg',
+            'images/player2.jpeg',
+            'images/player3.jpeg',
+            'images/player4.jpeg',
+            'images/player5.jpeg',
+            'images/player6.jpeg',
+        ];
+        const getRandom = () => {
+            const randomIndex = Math.floor(Math.random() * imgs.length);
+            return imgs[randomIndex];      
+        }
+        const onClick = () => {
+            setImg((event)=> {
+                const clickImg = event.target;
+                img.src = {getRandom}
+            });
+        }
+        return (
+            <div>
+                <img 
+                    src={img}
+                    alt=''
+                    style = {{width : '400px'}}
+                    onClick={onClick}
+                />
+            </div>
+        );
+    }
+
+    ReactDOM.render(<Random/>,root);
+
+
+////
+    
+
+</script>
+</html>

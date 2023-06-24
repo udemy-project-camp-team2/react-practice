@@ -11,24 +11,22 @@
 </head>
 <body>
     <div id="root"></div>
+
     <script type="text/babel">
         const root = document.getElementById('root');
-
-        function userProfile (){
-                return (
-                    <div name = 'ㅎㅅㅎ' age={30} work='artist'>
-                        {name}, {age}
-                    </div>
-                )
-            }
-
-        function App ({name, age, work}) {
+        function Counter () {
+            const [count,setCount] = React.useState(0);
+            
             return (
-                    <userProfile name = 'ㅎㅅㅎ' age={30} work='artist'/>
-                )
+                <div>
+                    <div>{count}</div>
+                    <button onClick={() => setCount(count+1)}>+</button>
+                    <button onClick={() => setCount(count-1)}>-</button>
+                </div>
+            )
         }
-        
-        ReactDOM.render(<App/>,root);
+
+        ReactDOM.render(<Counter />, root)
     </script>
 </body>
 </html>

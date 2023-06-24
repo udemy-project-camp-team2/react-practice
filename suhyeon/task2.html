@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행지검색</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>  
+</body>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    function Main() {
+      return (
+        <>
+          <form
+            action="https://www.goodchoice.kr/product/result/"
+            method="get"
+            target="_blank"
+          >
+            <p>
+              <label for="keyword">가고 싶은 도시</label>
+              <input
+                type="text"
+                name="keyword"
+                id="keyword"
+                placeholder="제주도"
+              />
+              <input type="submit" value="검색하기" />
+            </p>
+            <p>©여기어때</p>
+          </form>
+        </>
+      );
+    }
+    const title = React.createElement(
+      "h1",
+      null,
+      "가고싶은 여행지를 검색하세요",
+      [<Main />]
+    );
+    ReactDOM.render(title, root);
+</script>
+</html>
